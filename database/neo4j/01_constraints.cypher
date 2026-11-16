@@ -1,0 +1,36 @@
+
+// Airport Operations Management System
+// 01 - Neo4j uniqueness constraints
+
+CREATE CONSTRAINT airport_id IF NOT EXISTS
+FOR (a:Airport) REQUIRE a.id IS UNIQUE;
+
+CREATE CONSTRAINT terminal_id IF NOT EXISTS
+FOR (t:Terminal) REQUIRE t.id IS UNIQUE;
+
+CREATE CONSTRAINT gate_id IF NOT EXISTS
+FOR (g:Gate) REQUIRE g.id IS UNIQUE;
+
+CREATE CONSTRAINT airline_code IF NOT EXISTS
+FOR (a:Airline) REQUIRE a.code IS UNIQUE;
+
+CREATE CONSTRAINT aircraft_id IF NOT EXISTS
+FOR (a:Aircraft) REQUIRE a.id IS UNIQUE;
+
+CREATE CONSTRAINT flight_id IF NOT EXISTS
+FOR (f:Flight) REQUIRE f.id IS UNIQUE;
+
+CREATE CONSTRAINT crew_id IF NOT EXISTS
+FOR (c:Crew) REQUIRE c.id IS UNIQUE;
+
+CREATE CONSTRAINT passenger_id IF NOT EXISTS
+FOR (p:Passenger) REQUIRE p.id IS UNIQUE;
+
+CREATE CONSTRAINT booking_id IF NOT EXISTS
+FOR (b:Booking) REQUIRE b.id IS UNIQUE;
+
+CREATE CONSTRAINT baggage_id IF NOT EXISTS
+FOR (b:Baggage) REQUIRE b.id IS UNIQUE;
+
+CREATE CONSTRAINT delay_reason_id IF NOT EXISTS
+FOR (r:DelayReason) REQUIRE r.id IS UNIQUE;

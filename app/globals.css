@@ -1,0 +1,422 @@
+
+/* =========================================
+   AIRPORT OPERATIONS MANAGEMENT SYSTEM
+   Professional Dashboard Theme
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #17365d;
+    --primary-hover: #244b78;
+    --accent: #2563eb;
+    --background: #f3f6fa;
+    --surface: #ffffff;
+    --text: #172438;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #15803d;
+    --success-bg: #dcfce7;
+    --warning: #b45309;
+    --warning-bg: #fef3c7;
+    --danger: #b91c1c;
+    --danger-bg: #fee2e2;
+    --shadow: 0 2px 10px rgba(15, 35, 60, 0.045);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 30px 32px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================================
+   STATISTICS CARDS
+========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.card {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(15, 35, 60, 0.08);
+}
+
+.card strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 750;
+    color: var(--primary);
+    line-height: 1.3;
+}
+
+.card .muted {
+    display: block;
+    margin-top: 7px;
+    font-weight: 500;
+}
+
+/* =========================================
+   CONTENT PANELS
+========================================= */
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+.panel h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.panel p {
+    margin: 10px 0;
+    color: #475569;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 13px 14px;
+    text-align: left;
+    border-bottom: 1px solid #edf1f5;
+    white-space: nowrap;
+}
+
+th {
+    background: #f7f9fc;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+tbody tr {
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 2px;
+}
+
+button.danger {
+    background: var(--danger);
+}
+
+button.danger:hover {
+    background: #991b1b;
+}
+
+button.secondary {
+    background: #edf2f8;
+    color: #334155;
+    border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+    background: #e2e8f0;
+}
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e8eef8;
+    color: #334155;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.badge.success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.badge.warning {
+    background: var(--warning-bg);
+    color: var(--warning);
+}
+
+.badge.danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+/* =========================================
+   NOTIFICATIONS AND ALERTS
+========================================= */
+
+.notice {
+    padding: 13px 16px;
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    margin: 14px 0;
+    font-size: 13px;
+}
+
+.error {
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-wrap {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at top left, #e1ebf8, transparent 45%),
+        var(--background);
+}
+
+.login-card {
+    width: min(430px, 100%);
+    padding: 34px;
+    margin: 16px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(15, 35, 60, 0.08);
+}
+
+.login-card h1 {
+    color: var(--primary);
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+.login-card label {
+    display: block;
+    margin: 17px 0 7px;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* =========================================
+   LINKS AND INTERACTIVE ELEMENTS
+========================================= */
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+    .page {
+        padding: 22px 18px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 15px 12px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card strong {
+        font-size: 25px;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .login-card {
+        padding: 24px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
